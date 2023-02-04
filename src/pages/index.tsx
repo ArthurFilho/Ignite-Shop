@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HomeContainer, Product } from "../styles/pages/home";
+import { HomeContainer, Product } from "../../styles/pages/home";
 
 import { GetServerSideProps } from "next";
 import { useKeenSlider} from 'keen-slider/react'
@@ -9,7 +9,7 @@ import shirt2 from '../assets/shirts/2.png'
 import shirt3 from '../assets/shirts/3.png'
 
 import 'keen-slider/keen-slider.min.css'
-import { stripe } from "../lib/stripe";
+import { stripe } from "../lib/stripe"
 
 
 export default function Home() {
