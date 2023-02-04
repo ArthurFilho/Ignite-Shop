@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HomeContainer, Product } from "../styles/pages/home";
 
+import { GetServerSideProps } from "next";
 import { useKeenSlider} from 'keen-slider/react'
 
 import shirt1 from '../assets/shirts/1.png'
@@ -8,6 +9,8 @@ import shirt2 from '../assets/shirts/2.png'
 import shirt3 from '../assets/shirts/3.png'
 
 import 'keen-slider/keen-slider.min.css'
+import { stripe } from "../lib/stripe";
+
 
 export default function Home() {
   const [sliderRef] = useKeenSlider({
@@ -57,4 +60,17 @@ export default function Home() {
       </Product>
     </HomeContainer>
   )
+}
+
+
+export const getServerSideProps:GetServerSideProps = async () => {
+    const response = await stripe.products.list()
+
+    console.log(response.data);
+
+  return {
+    props: {
+      list: [1, 2, 3]
+    } 
+  }
 }
