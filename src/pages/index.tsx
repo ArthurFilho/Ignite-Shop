@@ -21,8 +21,6 @@ interface HomeProps {
   }[]
 }
 
-
-
 export default function Home({ products }: HomeProps) {
   const [sliderRef] = useKeenSlider({
     slides: {
@@ -35,7 +33,7 @@ export default function Home({ products }: HomeProps) {
   return (
     <>
     <Head>
-      <title>Home | Ignite Shop</title>
+      <title>Home</title>
     </Head>
 
 
@@ -61,9 +59,6 @@ export default function Home({ products }: HomeProps) {
         )
       })}
 
-      
-
-      
     </HomeContainer>
     </>
     
