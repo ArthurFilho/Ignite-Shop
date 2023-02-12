@@ -3,14 +3,12 @@ import { GetStaticProps } from "next";
 import { stripe } from "../lib/stripe";
 import Head from "next/head";
 
-
 import { useKeenSlider } from 'keen-slider/react'
 
 import 'keen-slider/keen-slider.min.css'
 import Stripe from "stripe";
 import Link from "next/link";
 import { HomeContainer, Product } from "../../styles/pages/home";
-
 
 interface HomeProps {
   products: {
@@ -29,17 +27,14 @@ export default function Home({ products }: HomeProps) {
     }
   })
 
-
   return (
     <>
     <Head>
       <title>Home</title>
     </Head>
 
-
     <HomeContainer ref={sliderRef} className="keen-slider">
       
-
       {products.map(product => {
         return (
           <Link key={product.id} href={`/product/${product.id}`} prefetch={false}>
@@ -49,10 +44,12 @@ export default function Home({ products }: HomeProps) {
 
               <footer>
                 <strong>{product.name}</strong>
-                <span>{new Intl.NumberFormat('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                }).format(product.price)}</span>
+                <span>
+                {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+                }).format(product.price)}
+                </span>
               </footer>
             </Product>
           </Link>
@@ -61,7 +58,6 @@ export default function Home({ products }: HomeProps) {
 
     </HomeContainer>
     </>
-    
   )
 }
 
