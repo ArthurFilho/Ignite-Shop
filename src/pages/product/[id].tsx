@@ -8,7 +8,6 @@ import { useState } from "react"
 import Head from "next/head"
 import { ImageContainer, ProductContainer, ProductDetails } from "../../../styles/pages/product"
 
-
 interface ProductProps {
   product: {
     id: string;
@@ -55,7 +54,6 @@ export default function Product({product}: ProductProps) {
         <title>{product.name} | Ignite Shop</title>
       </Head>
 
-
       <ProductContainer>
         <ImageContainer>
           <Image  src={product.imageUrl} width={480} height={520} alt=""/>
@@ -82,18 +80,14 @@ export default function Product({product}: ProductProps) {
   )
 }
 
-
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { id: 'prod_MhLqM9vRQPcLhI' } },
+      { params: { id: 'prod_NIQoXtxapppR5e' } },
     ],
     fallback: true,
   }
 }
-
-
-
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ params }) => {
   if(!params) {
@@ -102,18 +96,13 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ para
     }
   }
 
-
   const productId = params.id
-
 
   const product = await stripe.products.retrieve(productId, {
     expand: ['default_price']
   })
 
-
   const price = product.default_price as Stripe.Price
-
-
 
   return {
     props: {
