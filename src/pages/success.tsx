@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Stripe from "stripe";
 import { stripe } from "../lib/stripe";
-import { SuccessContainer, ImageContainer} from "../../styles/pages/success";
+import { SuccessContainer, ImageContainer} from "../../src/styles/pages/success";
 
 interface SuccessProps {
   custumerName: string

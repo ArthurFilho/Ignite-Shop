@@ -8,7 +8,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import Stripe from "stripe";
 import Link from "next/link";
-import { HomeContainer, Product } from "../../styles/pages/home";
+import { HomeContainer, Product } from "../../src/styles/pages/home";
 
 interface HomeProps {
   products: {

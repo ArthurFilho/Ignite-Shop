@@ -6,7 +6,7 @@ import { useRouter } from "next/router"
 import axios from "axios"
 import { useState } from "react"
 import Head from "next/head"
-import { ImageContainer, ProductContainer, ProductDetails } from "../../../styles/pages/product"
+import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product"
 
 interface ProductProps {
   product: {
